@@ -1,7 +1,9 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import elements.Group;
+import elements.Item;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -16,15 +18,15 @@ public class LeftPanel {
         return this;
     }
 
-    public LeftPanel choseItem(String item) {
+    public LeftPanel choseItem(Item item) {
         $(".show")
                 .$(".menu-list")
-                .$$(".btn").findBy(Condition.text(item))
+                .$$(".btn").findBy(Condition.text(item.returnItemName()))
                 .scrollTo()
                 .click();
 
         $(".text-center")
-                .shouldHave(Condition.text(item));
+                .shouldHave(Condition.text(item.returnItemName()));
 
         return this;
     }
