@@ -7,7 +7,7 @@ import elements.State;
 import org.assertj.core.api.Assertions;
 
 import static com.codeborne.selenide.Selenide.*;
-import static elements.Checked.CHECK;
+import static elements.Checked.*;
 import static elements.State.COLLAPSED;
 import static elements.State.EXPANDED;
 
@@ -20,10 +20,8 @@ public class CheckBoxPage {
         return toggle;
     }
 
-    public SelenideElement findChildToggle(String ancestorNodeName, String childNodeName) {
-        SelenideElement toggle = $$(".rct-node-parent")
-                .findBy(Condition.text(ancestorNodeName))
-                .$$(".rct-node-parent")
+    public SelenideElement findChildToggle(String childNodeName) {
+        SelenideElement toggle = $$(".rct-node-parent .rct-node-parent")
                 .findBy(Condition.text(childNodeName)).$("button");
         return toggle;
     }
@@ -41,7 +39,7 @@ public class CheckBoxPage {
         return checkbox;
     }
 
-    public SelenideElement findChildCheckBox(String ancestorNodeName, String childNodeName) {
+    public SelenideElement findChildCheckBox(String childNodeName) {
         SelenideElement checkbox = $$(".rct-node-parent .rct-node-parent")
                 .findBy(Condition.text(childNodeName))
                 .$("label");
@@ -60,9 +58,12 @@ public class CheckBoxPage {
 
     public void test() {
         findAncestorToggle("Home").click();
+        findChildToggle("Downloads").click();
         checkToggleExpanded(findAncestorToggle("Home"), EXPANDED);
-        findChildCheckBox("Home", "Desktop").click();
-        checkBoxCheck(findChildCheckBox("Home", "Desktop"), CHECK);
+        findChildCheckBox("Desktop").click();
+        checkBoxCheck(findChildCheckBox( "Desktop"), CHECK);
+        checkBoxCheck(findAncestorCheckBox("Home"), HALFCHECK);
+        checkBoxCheck(findChildCheckBox("Downloads"), UNCHECK);
     }
 
 
