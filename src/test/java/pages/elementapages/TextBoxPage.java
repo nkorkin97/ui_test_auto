@@ -2,11 +2,10 @@ package pages.elementapages;
 
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.Keys;
-import pages.basepage.BasePage;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class TextBoxPage extends BasePage {
+public class TextBoxPage {
 
     public TextBoxPage fillUserName(String fullName) {
         $("#userName")
