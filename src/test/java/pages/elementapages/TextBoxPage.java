@@ -1,11 +1,12 @@
-package pages;
+package pages.elementapages;
 
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.Keys;
+import pages.basepage.BasePage;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class TextBoxPage {
+public class TextBoxPage extends BasePage {
 
     public TextBoxPage fillUserName(String fullName) {
         $("#userName")
@@ -59,26 +60,32 @@ public class TextBoxPage {
         return this;
     }
 
-    public TextBoxPage checkOutput(
-            String name,
-            String email,
-            String currentAddress,
-            String permanentAddress
-    ) {
+    public TextBoxPage checkNameOutput(String name) {
         $("#output .border").$("#name")
                 .scrollTo()
                 .shouldBe(Condition.visible)
                 .shouldHave(Condition.text(name));
+        return this;
+    }
+    public TextBoxPage checkEmailOutput(String email) {
         $("#output .border").$("#email")
+                .scrollTo()
                 .shouldBe(Condition.visible)
                 .shouldHave(Condition.text(email));
+        return this;
+    }
+    public TextBoxPage checkCurrentAddressOutput(String currentAddress) {
         $("#output .border").$("#currentAddress")
+                .scrollTo()
                 .shouldBe(Condition.visible)
                 .shouldHave(Condition.text(currentAddress));
+        return this;
+    }
+    public TextBoxPage checkPermanentAddressOutput(String permanentAddress) {
         $("#output .border").$("#permanentAddress")
+                .scrollTo()
                 .shouldBe(Condition.visible)
                 .shouldHave(Condition.text(permanentAddress));
-
         return this;
     }
 }

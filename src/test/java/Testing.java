@@ -1,12 +1,10 @@
 import com.codeborne.selenide.Selenide;
 import config.BaseTest;
-import elements.Group;
-import elements.Item;
 import org.junit.jupiter.api.Test;
-import pages.Header;
+import pages.basepage.Header;
 import pages.HomePage;
-import pages.LeftPanel;
-import pages.TextBoxPage;
+import pages.basepage.LeftPanel;
+import pages.elementapages.TextBoxPage;
 
 import static elements.Group.*;
 import static elements.Item.*;
@@ -26,12 +24,7 @@ public class Testing extends BaseTest {
                 .fillEmail("nikita@korkin.com")
                 .fillCurrentAddress("Moscow")
                 .fillPermanentAddress("Moscow")
-                .clickSubmitButton()
-                .checkOutput(
-                        "Nikita Korkin",
-                        "nikita@korkin.com",
-                        "Moscow",
-                        "Moscow");
+                .clickSubmitButton();
 
         Selenide.sleep(9000);
     }

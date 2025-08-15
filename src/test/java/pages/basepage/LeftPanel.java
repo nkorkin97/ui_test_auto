@@ -1,7 +1,6 @@
-package pages;
+package pages.basepage;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import elements.Group;
 import elements.Item;
 
