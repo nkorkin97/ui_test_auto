@@ -1,4 +1,6 @@
-import com.codeborne.selenide.Selenide;
+package tests;
+
+import config.App;
 import config.BaseTest;
 import org.junit.jupiter.api.Test;
 import pages.basepage.Header;
@@ -8,21 +10,16 @@ import pages.elementapages.CheckBoxPage;
 import pages.elementapages.TextBoxPage;
 
 import static com.codeborne.selenide.Selenide.sleep;
-import static elements.Group.*;
-import static elements.Item.*;
+import static constants.Group.*;
+import static constants.Item.*;
 
 public class Testing extends BaseTest {
-    HomePage homePage = new HomePage();
-    LeftPanel leftPanel = new LeftPanel();
-    Header header = new Header();
-    TextBoxPage textBoxPage = new TextBoxPage();
-    CheckBoxPage checkBoxPage = new CheckBoxPage();
 
     @Test
     public void test() {
-        homePage.selectElementsGroup(ELEMENTS);
-        leftPanel.choseItem(TEXTBOX);
-        textBoxPage
+        App.homePage.selectElementsGroup(ELEMENTS);
+        App.textBoxPage.leftPanel().choseItem(TEXTBOX);
+        App.textBoxPage
                 .fillUserName("Nikita Korkin")
                 .fillEmail("nikita@korkin.com")
                 .fillCurrentAddress("Moscow")
@@ -34,9 +31,9 @@ public class Testing extends BaseTest {
 
     @Test
     public void test1() {
-        homePage.selectElementsGroup(ELEMENTS);
-        leftPanel.choseItem(CHECKBOX);
-        checkBoxPage.test();
+        App.homePage.selectElementsGroup(ELEMENTS);
+        App.textBoxPage.leftPanel().choseItem(CHECKBOX);
+        App.checkBoxPage.test();
         System.out.println("");
     }
 }

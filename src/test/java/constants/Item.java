@@ -1,4 +1,4 @@
-package elements;
+package constants;
 
 public enum Item {
     TEXTBOX("Text Box"),

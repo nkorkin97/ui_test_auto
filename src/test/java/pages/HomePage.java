@@ -3,7 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import config.BaseTest;
-import elements.Group;
+import constants.Group;
 import org.assertj.core.api.Assertions;
 
 import static com.codeborne.selenide.Selenide.*;

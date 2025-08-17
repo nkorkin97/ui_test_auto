@@ -1,17 +1,15 @@
 package pages.elementapages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import elements.Checked;
-import elements.State;
+import constants.Checked;
+import constants.State;
 import org.assertj.core.api.Assertions;
+import config.BasePage;
 
 import static com.codeborne.selenide.Selenide.*;
-import static elements.Checked.*;
-import static elements.State.EXPANDED;
 
-public class CheckBoxPage {
+public class CheckBoxPage extends BasePage {
 
     public SelenideElement findAncestorNode(String nodeName) {
         SelenideElement node = $$(".rct-node-parent")
@@ -65,16 +63,7 @@ public class CheckBoxPage {
         findToggle(documentsNode).click();
         findToggle(officeNode).click();
         findCheckBox(leaf).click();
+
     }
-
-
-
-
-
-
-
-
-
-
 
 }

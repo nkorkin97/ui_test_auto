@@ -1,4 +1,4 @@
-package elements;
+package constants;
 
 public enum State {
     EXPANDED ("rct-node-expanded"),

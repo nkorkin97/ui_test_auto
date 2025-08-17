@@ -1,7 +1,7 @@
-package elements;
+package constants;
 
 public enum Group {
-    ELEMENTS("Elements", "elements"),
+    ELEMENTS("Elements", "constants"),
     FORMS("Forms", "forms"),
     ALERTSWINDOWS("Alerts, Frame & Windows", "alertsWindows"),
     WIDGETS("Widgets", "widgets"),

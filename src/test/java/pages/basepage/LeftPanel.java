@@ -1,8 +1,8 @@
 package pages.basepage;
 
 import com.codeborne.selenide.Condition;
-import elements.Group;
-import elements.Item;
+import constants.Group;
+import constants.Item;
 
 import static com.codeborne.selenide.Selenide.$;
 
