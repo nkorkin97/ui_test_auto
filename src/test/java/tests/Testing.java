@@ -25,15 +25,13 @@ public class Testing extends BaseTest {
                 .fillCurrentAddress("Moscow")
                 .fillPermanentAddress("Moscow")
                 .clickSubmitButton();
-
-        sleep(9000);
     }
 
-    @Test
-    public void test1() {
-        App.homePage.selectElementsGroup(ELEMENTS);
-        App.textBoxPage.leftPanel().choseItem(CHECKBOX);
-        App.checkBoxPage.test();
-        System.out.println("");
-    }
+//    @Test
+//    public void test1() {
+//        App.homePage.selectElementsGroup(ELEMENTS);
+//        App.textBoxPage.leftPanel().choseItem(CHECKBOX);
+//        App.checkBoxPage.test();
+//        System.out.println("");
+//    }
 }

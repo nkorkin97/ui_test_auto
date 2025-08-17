@@ -9,15 +9,15 @@ public class BasePage {
     protected static Header header;
 
     public LeftPanel leftPanel() {
-        if(leftPanel == null) {
-            leftPanel = new LeftPanel();
+        if(leftPanel==null) {
+            leftPanel=new LeftPanel();
         }
         return leftPanel;
     }
 
     public Header header() {
         if(header==null) {
-            header = new Header();
+            header=new Header();
         }
         return header;
     }

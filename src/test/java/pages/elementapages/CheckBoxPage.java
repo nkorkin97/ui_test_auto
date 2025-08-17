@@ -53,17 +53,16 @@ public class CheckBoxPage extends BasePage {
         return leaf;
     }
 
-    public void test() {
-        SelenideElement homeNode = findAncestorNode("Home");
-        SelenideElement documentsNode = findChildNode(homeNode, "Documents");
-        SelenideElement officeNode = findChildNode(documentsNode, "Office");
-        SelenideElement leaf = findLeaf(officeNode, "Public");
-
-        findToggle(homeNode).click();
-        findToggle(documentsNode).click();
-        findToggle(officeNode).click();
-        findCheckBox(leaf).click();
-
-    }
+//    public void test() {
+//        SelenideElement homeNode = findAncestorNode("Home");
+//        SelenideElement documentsNode = findChildNode(homeNode, "Documents");
+//        SelenideElement officeNode = findChildNode(documentsNode, "Office");
+//        SelenideElement leaf = findLeaf(officeNode, "Public");
+//
+//        findToggle(homeNode).click();
+//        findToggle(documentsNode).click();
+//        findToggle(officeNode).click();
+//        findCheckBox(leaf).click();
+//    }
 
 }
