@@ -5,7 +5,7 @@ import pages.HomePage;
 import pages.elementapages.CheckBoxPage;
 import pages.elementapages.RadioButtonPage;
 import pages.elementapages.TextBoxPage;
-import pages.elementapages.WebTablesPage;
+import pages.elementapages.webtablespage.WebTablesPage;
 
 public class App {
     public static HomePage homePage = Selenide.page(HomePage.class);

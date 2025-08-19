@@ -1,12 +1,15 @@
-package pages.elementapages;
+package pages.elementapages.webtablespage;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class WebTablesPage {
+
+    private WebTablesModal webTablesModal = Selenide.page(WebTablesModal.class);
 
     public SelenideElement getRowByNumber(int number) {
         SelenideElement row = $$(".rt-tr-group").get(number);
@@ -45,6 +48,13 @@ public class WebTablesPage {
                 .scrollTo()
                 .shouldBe(Condition.visible)
                 .click();
+        $(".modal-content").shouldBe(Condition.visible);
+        return this;
+    }
+
+    public WebTablesPage clickAddButton() {
+        $("#addNewRecordButton").shouldBe(Condition.visible).scrollTo().click();
+        $(".modal-content").shouldBe(Condition.visible);
         return this;
     }
 
@@ -58,9 +68,26 @@ public class WebTablesPage {
         return this;
     }
 
+    public WebTablesPage searchRow(String value) {
+        $("#searchBox").scrollTo().shouldBe(Condition.visible).setValue(value);
+        return this;
+    }
+
     public void test() {
-        SelenideElement row = getRowByNumber(1);
-        System.out.println(getFirstNameCell(row).getText());
+        clickAddButton();
+        webTablesModal
+                .fillFirstName("Nikita")
+                .fillLasttName("Korkin")
+                .fillEmail("korkin@nikita.org")
+                .fillAge("27")
+                .fillSalary("99999")
+                .fillDepartment("LIGA").clickSubmitBtn();
+        searchRow("9999");
+        SelenideElement row = getRowByNumber(0);
+        clickEditButton(row);
+        webTablesModal.fillFirstName("Korkin").clickSubmitBtn();
         clickDeleteButton(row);
+        searchRow("");
+
     }
 }
