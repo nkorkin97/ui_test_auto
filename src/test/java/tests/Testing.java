@@ -16,8 +16,7 @@ import static constants.Item.*;
 public class Testing extends BaseTest {
 
     @Test
-    public void test() {
-        App.homePage.selectElementsGroup(ELEMENTS);
+    public void testTextBox() {
         App.textBoxPage.leftPanel().choseItem(TEXTBOX);
         App.textBoxPage
                 .fillUserName("Nikita Korkin")
@@ -27,11 +26,24 @@ public class Testing extends BaseTest {
                 .clickSubmitButton();
     }
 
-//    @Test
-//    public void test1() {
-//        App.homePage.selectElementsGroup(ELEMENTS);
-//        App.textBoxPage.leftPanel().choseItem(CHECKBOX);
-//        App.checkBoxPage.test();
-//        System.out.println("");
-//    }
+    @Test
+    public void testCheckBox() {
+        App.textBoxPage.leftPanel().choseItem(CHECKBOX);
+        App.checkBoxPage.test();
+        System.out.println("");
+    }
+
+    @Test
+    public void testRadio() {
+        App.textBoxPage.leftPanel().choseItem(RADIOBUTTON);
+        App.radioButtonPage.test();
+        System.out.println("");
+    }
+
+    @Test
+    public void testTables() {
+        App.textBoxPage.leftPanel().choseItem(WEBTABLES);
+        App.webTablesPage.test();
+        System.out.println("");
+    }
 }

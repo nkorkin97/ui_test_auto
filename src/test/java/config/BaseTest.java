@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.open;
+import static constants.Group.ELEMENTS;
 
 public class BaseTest {
 
@@ -27,6 +28,7 @@ public class BaseTest {
     public void beforeEach() {
         if (!WebDriverRunner.hasWebDriverStarted()) {
             open("https://demoqa.com/");
+            App.homePage.selectElementsGroup(ELEMENTS);
         }
     }
 

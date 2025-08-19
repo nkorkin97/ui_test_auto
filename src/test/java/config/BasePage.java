@@ -1,5 +1,6 @@
 package config;
 
+import com.codeborne.selenide.Selenide;
 import pages.basepage.Header;
 import pages.basepage.LeftPanel;
 
