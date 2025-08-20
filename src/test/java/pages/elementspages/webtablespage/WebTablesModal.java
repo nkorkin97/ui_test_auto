@@ -1,11 +1,13 @@
-package pages.elementapages.webtablespage;
+package pages.elementspages.webtablespage;
 
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class WebTablesModal {
 
+    @Step
     public WebTablesModal fillFirstName(String firstName) {
         $("#firstName-wrapper input")
                 .scrollTo()
@@ -15,6 +17,7 @@ public class WebTablesModal {
         return this;
     }
 
+    @Step
     public WebTablesModal fillLasttName(String lastName) {
         $("#lastName-wrapper input")
                 .scrollTo()
@@ -24,6 +27,7 @@ public class WebTablesModal {
         return this;
     }
 
+    @Step
     public WebTablesModal fillEmail(String email) {
         $("#userEmail-wrapper input")
                 .scrollTo()
@@ -33,6 +37,7 @@ public class WebTablesModal {
         return this;
     }
 
+    @Step
     public WebTablesModal fillAge(String age) {
         $("#age-wrapper input")
                 .scrollTo()
@@ -42,6 +47,7 @@ public class WebTablesModal {
         return this;
     }
 
+    @Step
     public WebTablesModal fillSalary(String salary) {
         $("#salary-wrapper input")
                 .scrollTo()
@@ -51,6 +57,7 @@ public class WebTablesModal {
         return this;
     }
 
+    @Step
     public WebTablesModal fillDepartment(String department) {
         $("#department-wrapper input")
                 .scrollTo()
@@ -60,6 +67,7 @@ public class WebTablesModal {
         return this;
     }
 
+    @Step
     public WebTablesModal clickSubmitBtn() {
         $("#submit").scrollTo().shouldBe(Condition.visible).click();
         $(".modal-content").shouldNotBe(Condition.visible);

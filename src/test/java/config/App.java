@@ -2,10 +2,10 @@ package config;
 
 import com.codeborne.selenide.Selenide;
 import pages.HomePage;
-import pages.elementapages.CheckBoxPage;
-import pages.elementapages.RadioButtonPage;
-import pages.elementapages.TextBoxPage;
-import pages.elementapages.webtablespage.WebTablesPage;
+import pages.elementspages.CheckBoxPage;
+import pages.elementspages.RadioButtonPage;
+import pages.elementspages.TextBoxPage;
+import pages.elementspages.webtablespage.WebTablesPage;
 
 public class App {
     public static HomePage homePage = Selenide.page(HomePage.class);

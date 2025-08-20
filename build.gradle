@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id'io.qameta.allure' version '2.12.0'
 }
 
 group = 'org.nkorkin'
@@ -14,7 +15,8 @@ dependencies {
             'org.junit.jupiter:junit-jupiter-engine:5.8.2',
             'com.codeborne:selenide:6.19.1',
             'org.assertj:assertj-core:3.24.2',
-            'io.qameta.allure:allure-junit5:2.24.0'
+            'io.qameta.allure:allure-junit5:2.24.0',
+            'io.qameta.allure:allure-selenide:2.24.0'
     )
 }
 

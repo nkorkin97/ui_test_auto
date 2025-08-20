@@ -1,9 +1,8 @@
-package pages.elementapages;
+package pages.elementspages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import constants.Checked;
-import constants.State;
+import constants.checkbox.Checked;
+import constants.checkbox.State;
 import io.qameta.allure.Step;
 import org.assertj.core.api.Assertions;
 import config.BasePage;

@@ -1,4 +1,4 @@
-package constants;
+package constants.checkbox;
 
 public enum Checked {
     UNCHECK("rct-icon-uncheck"),

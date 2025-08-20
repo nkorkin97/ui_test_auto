@@ -3,14 +3,7 @@ package tests;
 import config.App;
 import config.BaseTest;
 import org.junit.jupiter.api.Test;
-import pages.basepage.Header;
-import pages.HomePage;
-import pages.basepage.LeftPanel;
-import pages.elementapages.CheckBoxPage;
-import pages.elementapages.TextBoxPage;
 
-import static com.codeborne.selenide.Selenide.sleep;
-import static constants.Group.*;
 import static constants.Item.*;
 
 public class Testing extends BaseTest {

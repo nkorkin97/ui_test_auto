@@ -1,4 +1,4 @@
-package pages.elementapages;
+package pages.elementspages;
 
 import com.codeborne.selenide.Condition;
 import config.BasePage;
